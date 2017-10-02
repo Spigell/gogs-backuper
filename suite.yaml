@@ -1,0 +1,2 @@
+docker:
+  backuper: /app/gogs/gogs
