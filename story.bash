@@ -5,7 +5,7 @@ destination=$(config destination)
 backup_name=gogs-backup-$(date +%s).zip
 backuper_dir=$(dirname $docker_backuper)
 
-docker exec -it $docker_name su git -c "cd $backuper_dir && ./gogs backup --archive-name $backup_name" || exit 11
+docker exec -t $docker_name su git -c "cd $backuper_dir && ./gogs backup --archive-name $backup_name" || exit 11
 
 echo "Copying archive to $destination..."
 docker cp $docker_name:$backuper_dir/$backup_name $destination || exit 12

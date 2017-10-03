@@ -16,7 +16,7 @@ Backup your repositories in dockerized gogs via sparrow/sparrowdo.
 
     task-run "test backup", "gogs-dockerized-backuper", %(
       docker => %(
-      name => 'gogs_gogs_1'
+        name => 'gogs_gogs_1'
       ),
       destination => '/home/vagrant/backup'
     );
